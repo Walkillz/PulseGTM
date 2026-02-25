@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PulseGTM — Signal-Driven Outbound Systems for B2B SaaS</title>
+<meta name="description" content="We engineer signal-driven outbound systems for B2B SaaS companies. Grounded in MEDDPICC, Challenger Sale, and Gap Selling.">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg-cream: #FAF7F2;
+  --bg-warm: #F3EDE4;
+  --bg-linen: #EDE7DC;
+  --bg-navy: #1B2332;
+  --bg-navy-deep: #141B27;
+  --bg-card: #FFFFFF;
+  --bg-card-warm: rgba(255,255,255,0.7);
+  --border-light: rgba(27,35,50,0.08);
+  --border-medium: rgba(27,35,50,0.12);
+  --text-heading: #1B2332;
+  --text-body: #3D4555;
+  --text-secondary: #6B7280;
+  --text-muted: #9CA3AF;
+  --text-on-dark: #F3EDE4;
+  --text-on-dark-secondary: rgba(243,237,228,0.65);
+  --accent-copper: #B87333;
+  --accent-copper-light: #D4945A;
+  --accent-copper-glow: rgba(184,115,51,0.12);
+  --accent-navy: #1B2332;
+  --accent-teal: #2A7D6F;
+  --accent-success: #2A7D6F;
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --radius-lg: 16px;
+  --radius-md: 12px;
+  --radius-sm: 8px;
+  --shadow-soft: 0 1px 3px rgba(27,35,50,0.04), 0 4px 12px rgba(27,35,50,0.03);
+  --shadow-card: 0 1px 2px rgba(27,35,50,0.04), 0 8px 24px rgba(27,35,50,0.06);
+  --shadow-elevated: 0 4px 6px rgba(27,35,50,0.04), 0 16px 40px rgba(27,35,50,0.08);
+}
+
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-cream);
+  color: var(--text-body);
+  overflow-x: hidden;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+::selection {
+  background: var(--accent-copper-glow);
+  color: var(--text-heading);
+}
+
+/* === LAYOUT === */
+section { position: relative; }
+.container { max-width: 1140px; margin: 0 auto; padding: 0 36px; }
+
+/* === NAV === */
+nav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 9000;
+  padding: 16px 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(250,247,242,0.85);
+  backdrop-filter: blur(20px) saturate(1.4);
+  border-bottom: 1px solid var(--border-light);
+  transition: all 0.3s var(--ease-smooth);
+}
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  text-decoration: none;
+}
+.logo-mark {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+  background: var(--bg-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+.logo-mark::after {
+  content: '';
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-copper);
+  animation: pulse-mark 3s ease-in-out infinite;
+}
+@keyframes pulse-mark {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.6; transform: scale(1.15); }
+}
+.logo-text {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  letter-spacing: -0.02em;
+}
+.nav-right { display: flex; align-items: center; gap: 32px; }
+.nav-right a {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.25s;
+  letter-spacing: -0.01em;
+}
+.nav-right a:hover { color: var(--text-heading); }
+.btn-nav {
+  padding: 10px 24px;
+  background: var(--bg-navy);
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--text-on-dark);
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.25s var(--ease-smooth);
+  letter-spacing: -0.01em;
+}
+.btn-nav:hover { background: #2A3548; box-shadow: 0 4px 16px rgba(27,35,50,0.15); transform: translateY(-1px); }
+
+/* === BUTTONS === */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: var(--bg-navy);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-on-dark);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s var(--ease-smooth);
+  letter-spacing: -0.01em;
+}
+.btn-primary:hover {
+  background: #2A3548;
+  box-shadow: var(--shadow-elevated);
+  transform: translateY(-2px);
+}
+.btn-primary .arr { transition: transform 0.25s; }
+.btn-primary:hover .arr { transform: translateX(3px); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 32px;
+  background: transparent;
+  border: 1.5px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  color: var(--text-heading);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s;
+  letter-spacing: -0.01em;
+}
+.btn-outline:hover { border-color: var(--accent-copper); color: var(--accent-copper); background: var(--accent-copper-glow); }
+
+/* Light button for dark sections */
+.btn-light {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 36px;
+  background: var(--bg-cream);
+  border: none;
+  border-radius: var(--radius-md);
+  color: var(--text-heading);
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s var(--ease-smooth);
+  letter-spacing: -0.01em;
+}
+.btn-light:hover { background: #fff; box-shadow: var(--shadow-elevated); transform: translateY(-2px); }
+.btn-light .arr { transition: transform 0.25s; }
+.btn-light:hover .arr { transform: translateX(3px); }
+
+/* === HERO === */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 140px 0 100px;
+  background: var(--bg-cream);
+  position: relative;
+  overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute;
+  top: -30%;
+  right: -15%;
+  width: 700px;
+  height: 700px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,115,51,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 420px;
+  gap: 64px;
+  align-items: center;
+}
+.hero-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 28px;
+  animation: fadeUp 0.7s var(--ease-out) both;
+}
+.eyebrow-line {
+  width: 28px;
+  height: 1.5px;
+  background: var(--accent-copper);
+}
+.eyebrow-text {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--accent-copper);
+  font-weight: 500;
+}
+.hero h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(2.6rem, 5vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: var(--text-heading);
+  margin-bottom: 24px;
+  animation: fadeUp 0.7s var(--ease-out) 0.06s both;
+}
+.hero h1 em {
+  font-style: italic;
+  color: var(--accent-copper);
+}
+.hero .hero-desc {
+  font-size: 1.1rem;
+  color: var(--text-body);
+  line-height: 1.8;
+  max-width: 500px;
+  margin-bottom: 40px;
+  animation: fadeUp 0.7s var(--ease-out) 0.12s both;
+}
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  animation: fadeUp 0.7s var(--ease-out) 0.18s both;
+}
+
+/* Signal cards */
+.signal-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  animation: fadeUp 0.9s var(--ease-out) 0.35s both;
+}
+.sig-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 18px 22px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.35s var(--ease-smooth);
+  animation: floatGentle 8s ease-in-out infinite;
+}
+.sig-card:nth-child(2) { animation-delay: -2.5s; margin-left: 24px; }
+.sig-card:nth-child(3) { animation-delay: -5s; margin-left: 10px; }
+.sig-card:hover { box-shadow: var(--shadow-card); transform: translateY(-3px); }
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+.sig-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  flex-shrink: 0;
+}
+.sig-icon.si-hire { background: rgba(42,125,111,0.08); }
+.sig-icon.si-fund { background: rgba(184,115,51,0.08); }
+.sig-icon.si-tech { background: rgba(27,35,50,0.06); }
+.sig-info h4 { font-size: 0.84rem; font-weight: 600; color: var(--text-heading); margin-bottom: 2px; letter-spacing: -0.01em; }
+.sig-info p { font-size: 0.74rem; color: var(--text-secondary); line-height: 1.4; }
+.sig-score {
+  margin-left: auto;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  padding: 5px 12px;
+  border-radius: 6px;
+  white-space: nowrap;
+}
+.score-a { background: rgba(42,125,111,0.08); color: var(--accent-teal); }
+.score-b { background: rgba(184,115,51,0.08); color: var(--accent-copper); }
+
+/* === SECTION COMMONS === */
+.stag {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+.stag-line { width: 24px; height: 1.5px; background: var(--accent-copper); }
+.stag-text {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--accent-copper);
+  font-weight: 500;
+}
+.stitle {
+  font-family: var(--font-serif);
+  font-size: clamp(1.9rem, 3.2vw, 2.6rem);
+  font-weight: 700;
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: var(--text-heading);
+  margin-bottom: 16px;
+}
+.stitle em { font-style: italic; color: var(--accent-copper); }
+.sdesc {
+  font-size: 1.02rem;
+  color: var(--text-secondary);
+  line-height: 1.75;
+  max-width: 540px;
+  margin-bottom: 52px;
+}
+
+/* === CREDIBILITY BAR === */
+.cred-bar {
+  padding: 52px 0;
+  background: var(--bg-warm);
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+.cred-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 36px;
+  text-align: center;
+}
+.cred-item .cred-val {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-heading);
+  display: block;
+  letter-spacing: -0.02em;
+}
+.cred-item .cred-label {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* === PROBLEM / CHALLENGE === */
+.challenge { padding: 110px 0; background: var(--bg-cream); }
+.ch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+.ch-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 36px 30px;
+  transition: all 0.4s var(--ease-smooth);
+  box-shadow: var(--shadow-soft);
+}
+.ch-card:hover { box-shadow: var(--shadow-card); transform: translateY(-4px); border-color: var(--border-medium); }
+.ch-num {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 300;
+  color: var(--accent-copper);
+  opacity: 0.5;
+  margin-bottom: 18px;
+  line-height: 1;
+}
+.ch-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+.ch-card p {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+
+/* === SYSTEM / FRAMEWORK (Dark Section) === */
+.system {
+  padding: 110px 0;
+  background: var(--bg-navy);
+  color: var(--text-on-dark);
+  position: relative;
+  overflow: hidden;
+}
+.system::before {
+  content: '';
+  position: absolute;
+  top: -200px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,115,51,0.06) 0%, transparent 70%);
+  pointer-events: none;
+}
+.system .stag-text { color: var(--accent-copper-light); }
+.system .stitle { color: var(--text-on-dark); }
+.system .stitle em { color: var(--accent-copper-light); }
+.system .sdesc { color: var(--text-on-dark-secondary); }
+
+.layers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 24px;
+}
+.ly-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: var(--radius-lg);
+  padding: 32px 26px;
+  transition: all 0.4s var(--ease-smooth);
+}
+.ly-card:hover { background: rgba(255,255,255,0.06); border-color: rgba(255,255,255,0.1); transform: translateY(-3px); }
+.ly-label {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--accent-copper-light);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.ly-label .ll { flex: 1; height: 1px; background: rgba(255,255,255,0.07); }
+.ly-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-on-dark);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+.ly-card p {
+  font-size: 0.84rem;
+  color: var(--text-on-dark-secondary);
+  line-height: 1.65;
+}
+
+/* Methodology banner */
+.method-banner {
+  background: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  padding: 40px 36px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+.method-banner h3 {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text-on-dark);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+}
+.method-banner p {
+  font-size: 0.88rem;
+  color: var(--text-on-dark-secondary);
+  line-height: 1.65;
+  margin-top: 10px;
+}
+.method-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+}
+.mpill {
+  padding: 7px 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 100px;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-on-dark-secondary);
+  letter-spacing: 0.02em;
+  transition: all 0.25s;
+}
+.mpill:hover { border-color: var(--accent-copper-light); color: var(--accent-copper-light); }
+.system-footnote {
+  text-align: center;
+  font-size: 0.82rem;
+  color: rgba(243,237,228,0.35);
+  font-style: italic;
+  padding-top: 16px;
+}
+
+/* === HOW IT WORKS === */
+.process { padding: 110px 0; background: var(--bg-warm); }
+.proc-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 28px;
+  position: relative;
+}
+.proc-steps::before {
+  content: '';
+  position: absolute;
+  top: 28px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 1px;
+  background: linear-gradient(90deg, var(--accent-copper), var(--border-medium), var(--accent-copper));
+  opacity: 0.3;
+}
+.ps-card { text-align: center; position: relative; }
+.ps-num {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: var(--bg-card);
+  border: 1.5px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin: 0 auto 22px;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s var(--ease-smooth);
+  box-shadow: var(--shadow-soft);
+}
+.ps-card:hover .ps-num { background: var(--bg-navy); color: var(--text-on-dark); border-color: var(--bg-navy); box-shadow: var(--shadow-card); }
+.ps-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+.ps-card p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.65; }
+
+/* === DELIVERABLES === */
+.deliverables { padding: 110px 0; background: var(--bg-cream); }
+.del-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+}
+.dl-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 36px 32px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.4s var(--ease-smooth);
+}
+.dl-card:hover { box-shadow: var(--shadow-card); transform: translateY(-3px); border-color: var(--border-medium); }
+.dl-tag {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-copper);
+  margin-bottom: 14px;
+  font-weight: 500;
+}
+.dl-card h3 {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-heading);
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+.dl-card p {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  line-height: 1.7;
+}
+.dl-card.dl-featured {
+  grid-column: span 2;
+  background: var(--bg-warm);
+  border-color: rgba(184,115,51,0.12);
+}
+
+/* === TEAM === */
+.team {
+  padding: 100px 0;
+  background: var(--bg-warm);
+  border-top: 1px solid var(--border-light);
+}
+.team-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.team-text .sdesc { margin-bottom: 0; }
+.team-cards { display: flex; flex-direction: column; gap: 16px; }
+.tm-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 24px 28px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  box-shadow: var(--shadow-soft);
+  transition: all 0.3s;
+}
+.tm-card:hover { box-shadow: var(--shadow-card); }
+.tm-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 13px;
+  background: var(--bg-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--accent-copper-light);
+  flex-shrink: 0;
+}
+.tm-info h4 { font-family: var(--font-sans); font-size: 0.95rem; font-weight: 600; color: var(--text-heading); }
+.tm-info p { font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin-top: 2px; }
+
+/* === CTA (Dark) === */
+.cta-section {
+  padding: 120px 0;
+  background: var(--bg-navy-deep);
+  position: relative;
+  overflow: hidden;
+}
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(184,115,51,0.07) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-inner {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  position: relative;
+}
+.cta-inner h2 {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  font-weight: 700;
+  color: var(--text-on-dark);
+  letter-spacing: -0.025em;
+  line-height: 1.15;
+  margin-bottom: 18px;
+}
+.cta-inner h2 em { font-style: italic; color: var(--accent-copper-light); }
+.cta-inner .cta-p {
+  font-size: 1.05rem;
+  color: var(--text-on-dark-secondary);
+  line-height: 1.75;
+  margin-bottom: 36px;
+}
+.cta-assurance {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+.cta-assurance span {
+  font-size: 0.82rem;
+  color: var(--text-on-dark-secondary);
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.cta-assurance .ck { color: var(--accent-copper-light); font-size: 0.9rem; }
+
+/* === FOOTER === */
+footer {
+  padding: 32px 0;
+  background: var(--bg-navy-deep);
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+footer .container { display: flex; justify-content: space-between; align-items: center; }
+footer p { font-size: 0.76rem; color: rgba(243,237,228,0.3); }
+footer a { font-size: 0.76rem; color: rgba(243,237,228,0.4); text-decoration: none; transition: color 0.25s; }
+footer a:hover { color: var(--accent-copper-light); }
+
+/* === ANIMATIONS === */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+.reveal.vis { opacity: 1; transform: translateY(0); }
+
+/* === RESPONSIVE === */
+@media (max-width: 1024px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .signal-stack { display: none; }
+  .ch-grid, .layers-grid { grid-template-columns: 1fr; }
+  .method-banner { grid-template-columns: 1fr; }
+  .proc-steps { grid-template-columns: repeat(2, 1fr); }
+  .proc-steps::before { display: none; }
+  .del-grid { grid-template-columns: 1fr; }
+  .dl-card.dl-featured { grid-column: span 1; }
+  .team-layout { grid-template-columns: 1fr; }
+}
+@media (max-width: 768px) {
+  nav { padding: 14px 20px; }
+  .nav-right a:not(.btn-nav) { display: none; }
+  .container { padding: 0 20px; }
+  .hero { padding: 120px 0 80px; min-height: auto; }
+  .proc-steps { grid-template-columns: 1fr; gap: 28px; }
+  .cred-row { grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .cta-assurance { flex-direction: column; align-items: center; gap: 10px; }
+  .hero-actions { flex-direction: column; align-items: stretch; }
+  footer .container { flex-direction: column; gap: 10px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- === NAV === -->
+<nav>
+  <a href="#" class="logo">
+    <div class="logo-mark"></div>
+    <span class="logo-text">PulseGTM</span>
+  </a>
+  <div class="nav-right">
+    <a href="#system">The System</a>
+    <a href="#process">Process</a>
+    <a href="#deliverables">Deliverables</a>
+    <a href="#audit" class="btn-nav">Request a GTM Audit →</a>
+  </div>
+</nav>
+
+<!-- === HERO === -->
+<section class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-eyebrow">
+          <span class="eyebrow-line"></span>
+          <span class="eyebrow-text">Signal-Driven GTM for B2B SaaS</span>
+        </div>
+        <h1>Your pipeline deserves<br>a <em>real system</em> behind it.</h1>
+        <p class="hero-desc">
+          PulseGTM engineers outbound systems for B2B SaaS companies — grounded in MEDDPICC qualification, Challenger messaging, and real-time buying signals — so every conversation starts with intent, not interruption.
+        </p>
+        <div class="hero-actions">
+          <a href="#audit" class="btn-primary">
+            Request Your Free GTM Audit
+            <svg class="arr" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h8M8 4l4 4-4 4"/></svg>
+          </a>
+          <a href="#system" class="btn-outline">Explore the framework</a>
+        </div>
+      </div>
+
+      <div class="signal-stack">
+        <div class="sig-card">
+          <div class="sig-icon si-hire">📈</div>
+          <div class="sig-info">
+            <h4>Hiring Signal Detected</h4>
+            <p>Acme SaaS — 3 SDR roles posted this week</p>
+          </div>
+          <div class="sig-score score-a">92</div>
+        </div>
+        <div class="sig-card">
+          <div class="sig-icon si-fund">💰</div>
+          <div class="sig-info">
+            <h4>Funding Event</h4>
+            <p>NovaTech — Series B, $24M raised</p>
+          </div>
+          <div class="sig-score score-a">87</div>
+        </div>
+        <div class="sig-card">
+          <div class="sig-icon si-tech">🔄</div>
+          <div class="sig-info">
+            <h4>Tech Stack Change</h4>
+            <p>Brickwell — Evaluating CRM alternatives</p>
+          </div>
+          <div class="sig-score score-b">74</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === CREDIBILITY BAR === -->
+<section class="cred-bar">
+  <div class="container">
+    <div class="cred-row">
+      <div class="cred-item">
+        <span class="cred-val">6-Layer</span>
+        <span class="cred-label">Proprietary execution framework</span>
+      </div>
+      <div class="cred-item">
+        <span class="cred-val">8 Methodologies</span>
+        <span class="cred-label">Integrated into one system</span>
+      </div>
+      <div class="cred-item">
+        <span class="cred-val">0 → 100</span>
+        <span class="cred-label">Signal scoring engine</span>
+      </div>
+      <div class="cred-item">
+        <span class="cred-val">Zero-Error</span>
+        <span class="cred-label">Execution standard</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === CHALLENGE === -->
+<section class="challenge">
+  <div class="container">
+    <div class="stag reveal"><span class="stag-line"></span><span class="stag-text">The Challenge</span></div>
+    <h2 class="stitle reveal">Most outbound underperforms because <em>the system was never built.</em></h2>
+    <p class="sdesc reveal">The gap between hiring an SDR and generating predictable pipeline is a GTM system. Without one, even strong products struggle to reach the right buyers at the right time.</p>
+    <div class="ch-grid">
+      <div class="ch-card reveal">
+        <div class="ch-num">1</div>
+        <h3>Volume without intelligence</h3>
+        <p>Reaching thousands of contacts without signal data or qualification. High activity, low conversion — and compounding damage to your domain reputation with every send.</p>
+      </div>
+      <div class="ch-card reveal">
+        <div class="ch-num">2</div>
+        <h3>Personalization without depth</h3>
+        <p>AI-generated emails that reference a company name but lack real insight. Your prospects receive dozens of these daily — there's no reason for them to respond to another one.</p>
+      </div>
+      <div class="ch-card reveal">
+        <div class="ch-num">3</div>
+        <h3>Pipeline without qualification</h3>
+        <p>Without a structured scoring framework, every lead looks the same. Your team invests equal effort in prospects who are ready to buy and those who never will.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === SYSTEM (Dark Section) === -->
+<section class="system" id="system">
+  <div class="container">
+    <div class="stag reveal"><span class="stag-line"></span><span class="stag-text">The PulseGTM Framework</span></div>
+    <h2 class="stitle reveal">A 6-layer execution system.<br><em>Engineered for precision.</em></h2>
+    <p class="sdesc reveal">Our proprietary framework integrates eight proven sales methodologies into a unified outbound engine. Each layer builds on the one before it — no shortcuts, no gaps.</p>
+
+    <div class="layers-grid">
+      <div class="ly-card reveal">
+        <div class="ly-label">Layer 01 <span class="ll"></span></div>
+        <h3>ICP & Data Foundation</h3>
+        <p>Firmographic, technographic, and behavioral targeting — defining precisely who is worth reaching before any outreach begins.</p>
+      </div>
+      <div class="ly-card reveal">
+        <div class="ly-label">Layer 02 <span class="ll"></span></div>
+        <h3>Signal Detection & Scoring</h3>
+        <p>Identifying and scoring buying signals — hiring surges, funding events, tech stack changes, leadership shifts — on a 0-100 composite scale.</p>
+      </div>
+      <div class="ly-card reveal">
+        <div class="ly-label">Layer 03 <span class="ll"></span></div>
+        <h3>Qualification Engine</h3>
+        <p>Scoring every lead against a structured, multi-element qualification framework. Outreach only triggers when the evidence supports readiness.</p>
+      </div>
+      <div class="ly-card reveal">
+        <div class="ly-label">Layer 04 <span class="ll"></span></div>
+        <h3>Insight-Led Personalization</h3>
+        <p>Every message opens with a relevant insight, references a verified signal, and quantifies the cost of inaction — structured, not templated.</p>
+      </div>
+      <div class="ly-card reveal">
+        <div class="ly-label">Layer 05 <span class="ll"></span></div>
+        <h3>Multichannel Execution</h3>
+        <p>Coordinated email and LinkedIn sequences across a defined timeline. Each touchpoint follows a deliberate methodology with clear intent.</p>
+      </div>
+      <div class="ly-card reveal">
+        <div class="ly-label">Layer 06 <span class="ll"></span></div>
+        <h3>Feedback & Optimization</h3>
+        <p>Weekly performance reviews, monthly pipeline audits, and quarterly framework recalibration — continuous improvement built into the system.</p>
+      </div>
+    </div>
+
+    <div class="method-banner reveal">
+      <div>
+        <h3>Grounded in eight proven sales frameworks</h3>
+        <p>Each layer maps to specific, battle-tested methodologies used by leading SaaS companies globally. Our proprietary integration connects qualification, messaging, and timing into a single coherent engine.</p>
+      </div>
+      <div class="method-pills">
+        <span class="mpill">MEDDPICC</span>
+        <span class="mpill">Challenger Sale</span>
+        <span class="mpill">Gap Selling</span>
+        <span class="mpill">SPICED</span>
+        <span class="mpill">SPIN Selling</span>
+        <span class="mpill">Sandler System</span>
+        <span class="mpill">BANT</span>
+        <span class="mpill">CHAMP</span>
+      </div>
+    </div>
+
+    <p class="system-footnote reveal">Framework architecture, scoring models, and execution protocols are proprietary to PulseGTM.</p>
+  </div>
+</section>
+
+<!-- === PROCESS === -->
+<section class="process" id="process">
+  <div class="container">
+    <div class="stag reveal"><span class="stag-line"></span><span class="stag-text">The Process</span></div>
+    <h2 class="stitle reveal">From assessment to <em>predictable pipeline.</em></h2>
+    <p class="sdesc reveal">A structured engagement with full transparency at every stage. No black boxes.</p>
+    <div class="proc-steps">
+      <div class="ps-card reveal">
+        <div class="ps-num">1</div>
+        <h3>GTM Audit</h3>
+        <p>We assess your current ICP definition, signal coverage, messaging quality, qualification process, and deliverability infrastructure.</p>
+      </div>
+      <div class="ps-card reveal">
+        <div class="ps-num">2</div>
+        <h3>Signal Architecture</h3>
+        <p>We design the signal detection engine for your specific market — identifying which buying signals matter most and how they're weighted.</p>
+      </div>
+      <div class="ps-card reveal">
+        <div class="ps-num">3</div>
+        <h3>System Build</h3>
+        <p>We build the complete infrastructure — data workflows, qualification scorecards, personalization engine, and multichannel sequences.</p>
+      </div>
+      <div class="ps-card reveal">
+        <div class="ps-num">4</div>
+        <h3>Launch & Optimize</h3>
+        <p>We launch campaigns, monitor performance against defined benchmarks, and iterate on targeting, messaging, and signals based on real data.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === DELIVERABLES === -->
+<section class="deliverables" id="deliverables">
+  <div class="container">
+    <div class="stag reveal"><span class="stag-line"></span><span class="stag-text">What You Receive</span></div>
+    <h2 class="stitle reveal">A complete revenue system.<br><em>Engineered for your market.</em></h2>
+    <p class="sdesc reveal">Every engagement delivers infrastructure you own and operate — designed for long-term performance, not short-term dependency.</p>
+
+    <div class="del-grid">
+      <div class="dl-card dl-featured reveal">
+        <div class="dl-tag">Core Engine</div>
+        <h3>Signal-Scored Lead Intelligence</h3>
+        <p>A fully configured data workspace with waterfall enrichment, multi-category buying signal detection, and automated composite scoring. Your team always knows who to reach, when to reach them, and why they're ready — before your competitors do.</p>
+      </div>
+      <div class="dl-card reveal">
+        <div class="dl-tag">Qualification</div>
+        <h3>Structured Lead Scoring</h3>
+        <p>Every target account scored against a multi-element qualification framework. Clear visibility into which opportunities are real, where the gaps are, and what deserves your team's attention.</p>
+      </div>
+      <div class="dl-card reveal">
+        <div class="dl-tag">Messaging</div>
+        <h3>Methodology-Driven Sequences</h3>
+        <p>Multichannel sequences structured around insight-led hooks, signal-referenced context, and quantified value propositions. Every touchpoint follows a deliberate framework — not a generic template.</p>
+      </div>
+      <div class="dl-card reveal">
+        <div class="dl-tag">Foundation</div>
+        <h3>ICP & Data Architecture</h3>
+        <p>Precise targeting with firmographic, technographic, and behavioral filters. Account qualification before contact enrichment — ensuring clean data flows into clean pipeline.</p>
+      </div>
+      <div class="dl-card reveal">
+        <div class="dl-tag">Optimization</div>
+        <h3>Performance Framework</h3>
+        <p>Weekly metric reviews against defined benchmarks, monthly pipeline audits, and quarterly system recalibration. Structured continuous improvement, not reactive adjustments.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === TEAM === -->
+<section class="team" id="team">
+  <div class="container">
+    <div class="team-layout">
+      <div class="team-text">
+        <div class="stag reveal"><span class="stag-line"></span><span class="stag-text">The Team</span></div>
+        <h2 class="stitle reveal">Intentionally <em>lean.</em><br>Deliberately senior.</h2>
+        <p class="sdesc reveal">PulseGTM operates as a focused two-person team — one dedicated to GTM engineering and sales systems, the other to the technical infrastructure that powers it. Every client works directly with senior operators, not junior handoffs.</p>
+      </div>
+      <div class="team-cards">
+        <div class="tm-card reveal">
+          <div class="tm-avatar">M</div>
+          <div class="tm-info">
+            <h4>Mahmoud</h4>
+            <p>GTM Engineer — Signal architecture, qualification systems, campaign strategy & execution</p>
+          </div>
+        </div>
+        <div class="tm-card reveal">
+          <div class="tm-avatar">R</div>
+          <div class="tm-info">
+            <h4>Remoun</h4>
+            <p>Software Engineer — Technical infrastructure, automation, data workflows & integrations</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === CTA === -->
+<section class="cta-section" id="audit">
+  <div class="container">
+    <div class="cta-inner">
+      <div class="stag reveal" style="justify-content:center;"><span class="stag-line"></span><span class="stag-text" style="color:var(--accent-copper-light);">Get Started</span></div>
+      <h2 class="reveal">Request your complimentary <em>GTM Audit</em></h2>
+      <p class="cta-p reveal">We'll assess your current outbound infrastructure, identify signal gaps, and deliver a custom report with actionable recommendations — yours to keep, regardless of next steps.</p>
+      <a href="https://your-typeform-link.com" target="_blank" class="btn-light reveal">
+        Start Your Free Audit
+        <svg class="arr" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 8h8M8 4l4 4-4 4"/></svg>
+      </a>
+      <div class="cta-assurance reveal">
+        <span><span class="ck">✓</span> No commitment required</span>
+        <span><span class="ck">✓</span> Custom report within 48 hours</span>
+        <span><span class="ck">✓</span> Actionable — not a sales pitch</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- === FOOTER === -->
+<footer>
+  <div class="container">
+    <p>© 2026 PulseGTM. Signal-driven outbound systems for B2B SaaS.</p>
+    <a href="mailto:hello@pulsegtm.com">hello@pulsegtm.com</a>
+  </div>
+</footer>
+
+<!-- === SCROLL REVEAL === -->
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('vis');
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -50px 0px' });
+
+  document.querySelectorAll('.reveal').forEach((el, i) => {
+    el.style.transitionDelay = `${(i % 5) * 0.06}s`;
+    io.observe(el);
+  });
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      e.preventDefault();
+      const t = document.querySelector(a.getAttribute('href'));
+      if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+});
+</script>
+
+</body>
+</html>
