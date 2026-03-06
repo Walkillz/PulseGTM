@@ -3,33 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>PulseGTM — Signal-Driven Outbound Systems for B2B SaaS</title>
+<title>Qanat — Signal-Driven Outbound Systems for B2B SaaS</title>
 <meta name="description" content="We engineer signal-driven outbound systems for B2B SaaS companies. Grounded in MEDDPICC, Challenger Sale, and Gap Selling.">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,800;1,9..144,400;1,9..144,500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root {
-  --bg-cream: #FAF7F2;
-  --bg-warm: #F3EDE4;
-  --bg-linen: #EDE7DC;
-  --bg-navy: #1B2332;
-  --bg-navy-deep: #141B27;
-  --bg-card: #FFFFFF;
-  --bg-card-warm: rgba(255,255,255,0.7);
-  --border-light: rgba(27,35,50,0.08);
-  --border-medium: rgba(27,35,50,0.12);
-  --text-heading: #1B2332;
-  --text-body: #3D4555;
-  --text-secondary: #6B7280;
-  --text-muted: #9CA3AF;
-  --text-on-dark: #F3EDE4;
-  --text-on-dark-secondary: rgba(243,237,228,0.65);
-  --accent-copper: #B87333;
-  --accent-copper-light: #D4945A;
-  --accent-copper-glow: rgba(184,115,51,0.12);
-  --accent-navy: #1B2332;
-  --accent-teal: #2A7D6F;
-  --accent-success: #2A7D6F;
-  --font-serif: 'Fraunces', Georgia, serif;
+  --bg-cream: #FAF6F0;
+  --bg-warm: #F0E8DA;
+  --bg-linen: #E8DECE;
+  --bg-navy: #1A1832;
+  --bg-navy-deep: #110F24;
+  --bg-card: #FFFDF9;
+  --bg-card-warm: rgba(255,253,249,0.7);
+  --border-light: rgba(26,24,50,0.08);
+  --border-medium: rgba(26,24,50,0.12);
+  --text-heading: #1A1832;
+  --text-body: #3A3650;
+  --text-secondary: #6B6780;
+  --text-muted: #9A96AF;
+  --text-on-dark: #F0E8DA;
+  --text-on-dark-secondary: rgba(240,232,218,0.65);
+  --accent-copper: #C8972A;
+  --accent-copper-light: #E0B44D;
+  --accent-copper-glow: rgba(200,151,42,0.12);
+  --accent-navy: #1A1832;
+  --accent-teal: #2A8E7A;
+  --accent-success: #2A8E7A;
+  --font-serif: 'Playfair Display', Georgia, serif;
   --font-sans: 'Plus Jakarta Sans', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
   --ease-smooth: cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -37,9 +37,9 @@
   --radius-lg: 16px;
   --radius-md: 12px;
   --radius-sm: 8px;
-  --shadow-soft: 0 1px 3px rgba(27,35,50,0.04), 0 4px 12px rgba(27,35,50,0.03);
-  --shadow-card: 0 1px 2px rgba(27,35,50,0.04), 0 8px 24px rgba(27,35,50,0.06);
-  --shadow-elevated: 0 4px 6px rgba(27,35,50,0.04), 0 16px 40px rgba(27,35,50,0.08);
+  --shadow-soft: 0 1px 3px rgba(26,24,50,0.04), 0 4px 12px rgba(26,24,50,0.03);
+  --shadow-card: 0 1px 2px rgba(26,24,50,0.04), 0 8px 24px rgba(26,24,50,0.06);
+  --shadow-elevated: 0 4px 6px rgba(26,24,50,0.04), 0 16px 40px rgba(26,24,50,0.08);
 }
 
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -59,6 +59,27 @@ body {
   color: var(--text-heading);
 }
 
+/* === EGYPTIAN DECORATIVE === */
+.egyptian-border {
+  position: relative;
+}
+.egyptian-border::before {
+  content: '𓂀 𓁹 𓃀 𓆣 𓇌 𓊪 𓂀 𓁹 𓃀 𓆣 𓇌 𓊪 𓂀 𓁹 𓃀 𓆣';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.6rem;
+  letter-spacing: 0.5em;
+  color: var(--accent-copper);
+  opacity: 0.12;
+  overflow: hidden;
+  white-space: nowrap;
+  pointer-events: none;
+  padding: 8px 0;
+}
+
 /* === LAYOUT === */
 section { position: relative; }
 .container { max-width: 1140px; margin: 0 auto; padding: 0 36px; }
@@ -72,7 +93,7 @@ nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: rgba(250,247,242,0.85);
+  background: rgba(250,246,240,0.85);
   backdrop-filter: blur(20px) saturate(1.4);
   border-bottom: 1px solid var(--border-light);
   transition: all 0.3s var(--ease-smooth);
@@ -92,18 +113,27 @@ nav {
   align-items: center;
   justify-content: center;
   position: relative;
+  overflow: hidden;
+}
+.logo-mark::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(180deg, transparent, rgba(200,151,42,0.25));
 }
 .logo-mark::after {
-  content: '';
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: var(--accent-copper);
-  animation: pulse-mark 3s ease-in-out infinite;
+  content: '\2740';
+  font-size: 16px;
+  color: var(--accent-copper-light);
+  z-index: 1;
+  animation: shimmer-mark 4s ease-in-out infinite;
 }
-@keyframes pulse-mark {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(1.15); }
+@keyframes shimmer-mark {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.7; }
 }
 .logo-text {
   font-family: var(--font-sans);
@@ -136,7 +166,7 @@ nav {
   transition: all 0.25s var(--ease-smooth);
   letter-spacing: -0.01em;
 }
-.btn-nav:hover { background: #2A3548; box-shadow: 0 4px 16px rgba(27,35,50,0.15); transform: translateY(-1px); }
+.btn-nav:hover { background: #2A2848; box-shadow: 0 4px 16px rgba(26,24,50,0.15); transform: translateY(-1px); }
 
 /* === BUTTONS === */
 .btn-primary {
@@ -157,7 +187,7 @@ nav {
   letter-spacing: -0.01em;
 }
 .btn-primary:hover {
-  background: #2A3548;
+  background: #2A2848;
   box-shadow: var(--shadow-elevated);
   transform: translateY(-2px);
 }
@@ -215,6 +245,20 @@ nav {
   position: relative;
   overflow: hidden;
 }
+.hero::before {
+  content: '𓂋𓏏𓈖𓂋𓏏𓈖𓂋𓏏𓈖𓂋𓏏𓈖𓂋𓏏𓈖𓂋𓏏𓈖𓂋𓏏𓈖𓂋𓏏𓈖';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.3em;
+  color: var(--accent-copper);
+  opacity: 0.08;
+  pointer-events: none;
+  padding: 12px 0;
+}
 .hero::after {
   content: '';
   position: absolute;
@@ -223,7 +267,7 @@ nav {
   width: 700px;
   height: 700px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(184,115,51,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(200,151,42,0.07) 0%, transparent 70%);
   pointer-events: none;
 }
 .hero-grid {
@@ -318,9 +362,9 @@ nav {
   font-size: 1.05rem;
   flex-shrink: 0;
 }
-.sig-icon.si-hire { background: rgba(42,125,111,0.08); }
-.sig-icon.si-fund { background: rgba(184,115,51,0.08); }
-.sig-icon.si-tech { background: rgba(27,35,50,0.06); }
+.sig-icon.si-hire { background: rgba(42,142,122,0.08); }
+.sig-icon.si-fund { background: rgba(200,151,42,0.08); }
+.sig-icon.si-tech { background: rgba(26,24,50,0.06); }
 .sig-info h4 { font-size: 0.84rem; font-weight: 600; color: var(--text-heading); margin-bottom: 2px; letter-spacing: -0.01em; }
 .sig-info p { font-size: 0.74rem; color: var(--text-secondary); line-height: 1.4; }
 .sig-score {
@@ -332,8 +376,8 @@ nav {
   border-radius: 6px;
   white-space: nowrap;
 }
-.score-a { background: rgba(42,125,111,0.08); color: var(--accent-teal); }
-.score-b { background: rgba(184,115,51,0.08); color: var(--accent-copper); }
+.score-a { background: rgba(42,142,122,0.08); color: var(--accent-teal); }
+.score-b { background: rgba(200,151,42,0.08); color: var(--accent-copper); }
 
 /* === SECTION COMMONS === */
 .stag {
@@ -452,8 +496,22 @@ nav {
   width: 500px;
   height: 500px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(184,115,51,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(200,151,42,0.08) 0%, transparent 70%);
   pointer-events: none;
+}
+.system::after {
+  content: '𓁹 𓂀 𓃭 𓆓 𓇳 𓈖 𓊽 𓁹 𓂀 𓃭 𓆓 𓇳 𓈖 𓊽';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  text-align: center;
+  font-size: 0.7rem;
+  letter-spacing: 0.5em;
+  color: var(--accent-copper-light);
+  opacity: 0.08;
+  pointer-events: none;
+  padding: 12px 0;
 }
 .system .stag-text { color: var(--accent-copper-light); }
 .system .stitle { color: var(--text-on-dark); }
@@ -547,9 +605,13 @@ nav {
 .system-footnote {
   text-align: center;
   font-size: 0.82rem;
-  color: rgba(243,237,228,0.35);
+  color: rgba(240,232,218,0.35);
   font-style: italic;
   padding-top: 16px;
+}
+.system-footnote::before {
+  content: '𓂀 ';
+  opacity: 0.6;
 }
 
 /* === HOW IT WORKS === */
@@ -643,7 +705,7 @@ nav {
 .dl-card.dl-featured {
   grid-column: span 2;
   background: var(--bg-warm);
-  border-color: rgba(184,115,51,0.12);
+  border-color: rgba(200,151,42,0.12);
 }
 
 /* === TEAM === */
@@ -705,7 +767,7 @@ nav {
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(184,115,51,0.07) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(200,151,42,0.09) 0%, transparent 70%);
   pointer-events: none;
 }
 .cta-inner {
@@ -753,8 +815,8 @@ footer {
   border-top: 1px solid rgba(255,255,255,0.05);
 }
 footer .container { display: flex; justify-content: space-between; align-items: center; }
-footer p { font-size: 0.76rem; color: rgba(243,237,228,0.3); }
-footer a { font-size: 0.76rem; color: rgba(243,237,228,0.4); text-decoration: none; transition: color 0.25s; }
+footer p { font-size: 0.76rem; color: rgba(240,232,218,0.3); }
+footer a { font-size: 0.76rem; color: rgba(240,232,218,0.4); text-decoration: none; transition: color 0.25s; }
 footer a:hover { color: var(--accent-copper-light); }
 
 /* === ANIMATIONS === */
@@ -800,7 +862,7 @@ footer a:hover { color: var(--accent-copper-light); }
 <nav>
   <a href="#" class="logo">
     <div class="logo-mark"></div>
-    <span class="logo-text">PulseGTM</span>
+    <span class="logo-text">Qanat</span>
   </a>
   <div class="nav-right">
     <a href="#system">The System</a>
@@ -817,11 +879,11 @@ footer a:hover { color: var(--accent-copper-light); }
       <div>
         <div class="hero-eyebrow">
           <span class="eyebrow-line"></span>
-          <span class="eyebrow-text">Signal-Driven GTM for B2B SaaS</span>
+          <span class="eyebrow-text">Qanat — Channel Your Pipeline</span>
         </div>
-        <h1>Your pipeline deserves<br>a <em>real system</em> behind it.</h1>
+        <h1>Your pipeline deserves<br>a <em>real channel</em> behind it.</h1>
         <p class="hero-desc">
-          PulseGTM engineers outbound systems for B2B SaaS companies — grounded in MEDDPICC qualification, Challenger messaging, and real-time buying signals — so every conversation starts with intent, not interruption.
+          Qanat engineers outbound systems for B2B SaaS companies — grounded in MEDDPICC qualification, Challenger messaging, and real-time buying signals — channeling every conversation toward intent, not interruption.
         </p>
         <div class="hero-actions">
           <a href="#audit" class="btn-primary">
@@ -863,7 +925,7 @@ footer a:hover { color: var(--accent-copper-light); }
 </section>
 
 <!-- === CREDIBILITY BAR === -->
-<section class="cred-bar">
+<section class="cred-bar egyptian-border">
   <div class="container">
     <div class="cred-row">
       <div class="cred-item">
@@ -915,7 +977,7 @@ footer a:hover { color: var(--accent-copper-light); }
 <!-- === SYSTEM (Dark Section) === -->
 <section class="system" id="system">
   <div class="container">
-    <div class="stag reveal"><span class="stag-line"></span><span class="stag-text">The PulseGTM Framework</span></div>
+    <div class="stag reveal"><span class="stag-line"></span><span class="stag-text">The Qanat Framework</span></div>
     <h2 class="stitle reveal">A 6-layer execution system.<br><em>Engineered for precision.</em></h2>
     <p class="sdesc reveal">Our proprietary framework integrates eight proven sales methodologies into a unified outbound engine. Each layer builds on the one before it — no shortcuts, no gaps.</p>
 
@@ -969,12 +1031,12 @@ footer a:hover { color: var(--accent-copper-light); }
       </div>
     </div>
 
-    <p class="system-footnote reveal">Framework architecture, scoring models, and execution protocols are proprietary to PulseGTM.</p>
+    <p class="system-footnote reveal">Framework architecture, scoring models, and execution protocols are proprietary to Qanat.</p>
   </div>
 </section>
 
 <!-- === PROCESS === -->
-<section class="process" id="process">
+<section class="process egyptian-border" id="process">
   <div class="container">
     <div class="stag reveal"><span class="stag-line"></span><span class="stag-text">The Process</span></div>
     <h2 class="stitle reveal">From assessment to <em>predictable pipeline.</em></h2>
@@ -1048,7 +1110,7 @@ footer a:hover { color: var(--accent-copper-light); }
       <div class="team-text">
         <div class="stag reveal"><span class="stag-line"></span><span class="stag-text">The Team</span></div>
         <h2 class="stitle reveal">Intentionally <em>lean.</em><br>Deliberately senior.</h2>
-        <p class="sdesc reveal">PulseGTM operates as a focused two-person team — one dedicated to GTM engineering and sales systems, the other to the technical infrastructure that powers it. Every client works directly with senior operators, not junior handoffs.</p>
+        <p class="sdesc reveal">Qanat operates as a focused two-person team — one dedicated to GTM engineering and sales systems, the other to the technical infrastructure that powers it. Every client works directly with senior operators, not junior handoffs.</p>
       </div>
       <div class="team-cards">
         <div class="tm-card reveal">
@@ -1093,8 +1155,8 @@ footer a:hover { color: var(--accent-copper-light); }
 <!-- === FOOTER === -->
 <footer>
   <div class="container">
-    <p>© 2026 PulseGTM. Signal-driven outbound systems for B2B SaaS.</p>
-    <a href="mailto:hello@pulsegtm.com">hello@pulsegtm.com</a>
+    <p>© 2026 Qanat. Signal-driven outbound systems for B2B SaaS.</p>
+    <a href="mailto:hello@qanat.io">hello@qanat.io</a>
   </div>
 </footer>
 
