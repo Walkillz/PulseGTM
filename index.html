@@ -142,7 +142,7 @@ nav {
   color: var(--text-heading);
   letter-spacing: -0.02em;
 }
-.nav-right { display: flex; align-items: center; gap: 32px; }
+.nav-right { display: flex; align-items: center; gap: 20px; }
 .nav-right a {
   font-size: 0.88rem;
   color: var(--text-secondary);
@@ -152,6 +152,33 @@ nav {
   letter-spacing: -0.01em;
 }
 .nav-right a:hover { color: var(--text-heading); }
+.btn-signin {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  background: rgba(255,253,249,0.72);
+  color: var(--text-heading) !important;
+  font-weight: 600 !important;
+  white-space: nowrap;
+  box-shadow: var(--shadow-soft);
+}
+.btn-signin::before {
+  content: '';
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-teal);
+  box-shadow: 0 0 0 4px rgba(42,142,122,0.1);
+}
+.btn-signin:hover {
+  border-color: rgba(42,142,122,0.34);
+  background: #fff;
+  box-shadow: var(--shadow-card);
+  transform: translateY(-1px);
+}
 .btn-nav {
   padding: 10px 24px;
   background: var(--bg-navy);
@@ -845,7 +872,9 @@ footer a:hover { color: var(--accent-copper-light); }
 }
 @media (max-width: 768px) {
   nav { padding: 14px 20px; }
-  .nav-right a:not(.btn-nav) { display: none; }
+  .nav-right { gap: 10px; }
+  .nav-right a:not(.btn-signin) { display: none; }
+  .btn-signin { padding: 9px 14px; font-size: 0.82rem; }
   .container { padding: 0 20px; }
   .hero { padding: 120px 0 80px; min-height: auto; }
   .proc-steps { grid-template-columns: 1fr; gap: 28px; }
@@ -868,6 +897,7 @@ footer a:hover { color: var(--accent-copper-light); }
     <a href="#system">The System</a>
     <a href="#process">Process</a>
     <a href="#deliverables">Deliverables</a>
+    <a href="https://qanat-nazir-control-hub.mowakil.chatgpt.site" class="btn-signin" aria-label="Sign in to the Qanat and NAZIR control hub">Sign in</a>
     <a href="#audit" class="btn-nav">Request a GTM Audit →</a>
   </div>
 </nav>
